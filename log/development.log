@@ -3341,3 +3341,627 @@ FOREIGN KEY ("chatbot_statement_id")
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+Started GET "/" for 127.0.0.1 at 2017-07-11 17:49:07 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Processing by Clearance::UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (8.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Completed 200 OK in 274ms (Views: 257.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-11 17:49:11 +0100
+  
+ActionController::RoutingError (uninitialized constant ChatbotStatementController):
+  
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.2) lib/action_dispatch/http/request.rb:82:in `controller_class'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+clearance (1.16.0) lib/clearance/rack_session.rb:23:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin" for 127.0.0.1 at 2017-07-11 17:49:56 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-11 17:52:39 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>OH HEY</h1>
+    2: <%= form_for @statement, html: { multipart: true } do |form| %>
+    3:   <%= form.label :message %><p>
+    4: 
+    5:   <%= form.text_area :message %>
+  
+app/views/chatbot_statements/new.html.erb:2:in `_app_views_chatbot_statements_new_html_erb___319852513578247076_70092942247020'
+Started GET "/admin" for 127.0.0.1 at 2017-07-11 17:53:09 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (113.9ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `chatbot_statements_path' for #<#<Class:0x007f7f903fb238>:0x007f7f903e9f38>):
+    1: <h1>OH HEY</h1>
+    2: <%= form_for @statement, html: { multipart: true } do |form| %>
+    3:   <%= form.label :message %><p>
+    4: 
+    5:   <%= form.text_area :message %>
+  
+app/views/chatbot_statements/new.html.erb:2:in `_app_views_chatbot_statements_new_html_erb___319852513578247076_70092928861200'
+Started GET "/" for 127.0.0.1 at 2017-07-11 17:53:21 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Processing by Clearance::UsersController#new as HTML
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-11 17:53:24 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (98.4ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `chatbot_statements_path' for #<#<Class:0x007f7f903fb238>:0x007f7f96193f80>):
+    1: <h1>OH HEY</h1>
+    2: <%= form_for @statement, html: { multipart: true } do |form| %>
+    3:   <%= form.label :message %><p>
+    4: 
+    5:   <%= form.text_area :message %>
+  
+app/views/chatbot_statements/new.html.erb:2:in `_app_views_chatbot_statements_new_html_erb___319852513578247076_70092977916500'
+Started GET "/admin" for 127.0.0.1 at 2017-07-11 17:55:35 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (148.7ms)
+Completed 500 Internal Server Error in 167ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `chatbot_statements_path' for #<#<Class:0x007f7f95cceae0>:0x007f7f95cbd128>):
+    1: <h1>OH HEY</h1>
+    2: <%= form_for @statement, html: { multipart: true } do |form| %>
+    3:   <%= form.label :message %><p>
+    4: 
+    5:   <%= form.text_area :message %>
+  
+app/views/chatbot_statements/new.html.erb:2:in `_app_views_chatbot_statements_new_html_erb___319852513578247076_70092975432060'
+Started GET "/admin" for 127.0.0.1 at 2017-07-11 17:57:37 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 23.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-11 17:58:29 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/chatbot_statements" for 127.0.0.1 at 2017-07-11 17:58:31 +0100
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for ChatbotStatementsController):
+  
+actionpack (5.1.2) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+clearance (1.16.0) lib/clearance/rack_session.rb:23:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin" for 127.0.0.1 at 2017-07-11 18:00:23 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 22.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/chatbot_statements" for 127.0.0.1 at 2017-07-11 18:00:28 +0100
+Processing by ChatbotStatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "chatbot_statement"=>{"message"=>"Lol"}, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant ChatbotStatementsController::Statement):
+  
+app/controllers/chatbot_statements_controller.rb:7:in `create'
+Started GET "/admin" for 127.0.0.1 at 2017-07-11 18:00:49 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 19.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/chatbot_statements" for 127.0.0.1 at 2017-07-11 18:00:51 +0100
+Processing by ChatbotStatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "chatbot_statement"=>{"message"=>"asdasd"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "chatbot_statements" ("message", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["message", "asdasd"], ["created_at", "2017-07-11 17:00:51.805390"], ["updated_at", "2017-07-11 17:00:51.805390"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-11 18:00:51 +0100
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Processing by Clearance::UsersController#new as HTML
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2017-07-11 18:01:55 +0100
+Processing by Clearance::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+  Rendering /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/_form.html.erb (1.9ms)
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application (5.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-07-11 18:01:57 +0100
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"steve@email.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "steve@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+  Rendering /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/_form.html.erb (2.3ms)
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application (7.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 46ms (Views: 42.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-07-11 18:02:04 +0100
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"peter@email.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "peter@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+  Rendering /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/_form.html.erb (1.5ms)
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application (4.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 31ms (Views: 29.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2017-07-11 18:02:06 +0100
+Processing by Clearance::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+  Rendering /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/_form.html.erb (2.4ms)
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application (7.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-07-11 18:02:07 +0100
+Processing by Clearance::UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-07-11 18:02:09 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Dae", "email"=>"steve@email.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "f07c37c2b0cb5a446bf0362fd8868ab0df1ecead"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "steve@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "name", "email", "encrypted_password", "remember_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2017-07-11 17:02:09.661986"], ["updated_at", "2017-07-11 17:02:09.661986"], ["name", "Dae"], ["email", "steve@email.com"], ["encrypted_password", "$2a$10$OewqzVVKe2Dek9NpL7xcH.Vc397mfH3fJWw9/mL0dJOLSWHzt4dwq"], ["remember_token", "7be18be5e21b4f999c427b6baf6a2b4c8dd4a172"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 76ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-11 18:02:09 +0100
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "7be18be5e21b4f999c427b6baf6a2b4c8dd4a172"], ["LIMIT", 1]]
+Processing by Clearance::UsersController#chatroom as HTML
+  Rendering users/chatroom.html.erb within layouts/application
+  Rendered users/chatroom.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2017-07-11 18:04:16 +0100
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "7be18be5e21b4f999c427b6baf6a2b4c8dd4a172"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "5b5f719bf50cb6891a02a7d00c4004edc0ce7896"], ["updated_at", "2017-07-11 17:04:16.821409"], ["id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 20ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2017-07-11 18:04:16 +0100
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/_form.html.erb (8.7ms)
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 33ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2017-07-11 18:04:20 +0100
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/_form.html.erb (2.0ms)
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 31ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-07-11 18:04:22 +0100
+Processing by Clearance::UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-07-11 18:04:25 +0100
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Lol", "email"=>"steve@email.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "steve@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 91ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-07-11 18:04:29 +0100
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Lol", "email"=>"steved@email.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "steved@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "name", "email", "encrypted_password", "remember_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2017-07-11 17:04:29.149417"], ["updated_at", "2017-07-11 17:04:29.149417"], ["name", "Lol"], ["email", "steved@email.com"], ["encrypted_password", "$2a$10$KCX2JOaa0HelhLg0jEHFpOV3LXgT5n9tchemsBzV2WeJL4biXwEwi"], ["remember_token", "9210cfb3a0d81bd937e281ca9d96e63ec41a1526"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 79ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-11 18:04:29 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "9210cfb3a0d81bd937e281ca9d96e63ec41a1526"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+Completed 406 Not Acceptable in 104ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (ChatbotStatementsController#chatroom is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.2) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.2) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.2) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.2) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.2) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+clearance (1.16.0) lib/clearance/rack_session.rb:23:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-11 18:05:10 +0100
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "9210cfb3a0d81bd937e281ca9d96e63ec41a1526"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-11 18:05:34 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "9210cfb3a0d81bd937e281ca9d96e63ec41a1526"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-11 18:06:56 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "9210cfb3a0d81bd937e281ca9d96e63ec41a1526"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-11 18:07:08 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "9210cfb3a0d81bd937e281ca9d96e63ec41a1526"], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/chatbot_statements" for 127.0.0.1 at 2017-07-11 18:07:26 +0100
+Processing by ChatbotStatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "chatbot_statement"=>{"message"=>"This is a message I think"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "chatbot_statements" ("message", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["message", "This is a message I think"], ["created_at", "2017-07-11 17:07:26.134586"], ["updated_at", "2017-07-11 17:07:26.134586"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-11 18:07:26 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "9210cfb3a0d81bd937e281ca9d96e63ec41a1526"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2017-07-11 18:09:14 +0100
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "9210cfb3a0d81bd937e281ca9d96e63ec41a1526"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "bdf160425060aa3214f4f0f2e8a808f91d553d08"], ["updated_at", "2017-07-11 17:09:14.275497"], ["id", 2]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 14ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2017-07-11 18:09:14 +0100
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/_form.html.erb (1.3ms)
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-07-11 18:09:21 +0100
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"dave@email.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dave@email.com"], ["LIMIT", 1]]
+  Rendering /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/_form.html.erb (1.3ms)
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 401 Unauthorized in 28ms (Views: 25.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-07-11 18:09:22 +0100
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"steve@email.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "steve@email.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 70ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-11 18:09:23 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "5b5f719bf50cb6891a02a7d00c4004edc0ce7896"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  [1m[36mChatbotStatement Load (0.2ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.2ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 29ms (Views: 20.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-11 18:09:30 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "5b5f719bf50cb6891a02a7d00c4004edc0ce7896"], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/chatbot_statements" for 127.0.0.1 at 2017-07-11 18:09:38 +0100
+Processing by ChatbotStatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "chatbot_statement"=>{"message"=>"HERE IS THE THING THAT YOU NEED TO SEE"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chatbot_statements" ("message", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["message", "HERE IS THE THING THAT YOU NEED TO SEE"], ["created_at", "2017-07-11 17:09:38.969116"], ["updated_at", "2017-07-11 17:09:38.969116"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-11 18:09:38 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "5b5f719bf50cb6891a02a7d00c4004edc0ce7896"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (1.3ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 31ms (Views: 26.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-11 18:10:11 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "5b5f719bf50cb6891a02a7d00c4004edc0ce7896"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-11 18:10:31 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "5b5f719bf50cb6891a02a7d00c4004edc0ce7896"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  [1m[36mChatbotStatement Load (0.2ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 0.3ms)
+
+
