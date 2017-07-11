@@ -1,0 +1,2 @@
+module ChatbotStatementsHelper
+end

@@ -1,0 +1,2 @@
+class ChatbotStatementsController < ApplicationController
+end
