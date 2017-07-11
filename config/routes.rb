@@ -7,11 +7,7 @@ Rails.application.routes.draw do
   end
 
   constraints Clearance::Constraints::SignedIn.new do
-    root to: "posts#index", as: :signed_in_root
-    get 'users/:id' => "users#profile"
-    resources :posts do
-      resources :comments
-    end
-    resources :users, :likes
+    root to: "clearance/users#new", as: :signed_in_root
+    resources :users
   end
 end
