@@ -8,21 +8,13 @@ RSpec.feature "Interface", type: :feature do
 
   it "Page displays new post" do
     sign_up
-    visit '/admin'
-    fill_in 'chatbot-statement-input', with: 'Test Message'
-    fill_in 'answer', with: 'My Answer'
-    fill_in 'response', with: 'My Response'
-    find('.submit-field input').click
+    create_new_statement
     expect(page).to have_content 'Test Message'
   end
 
   it "Page displays post answer" do
     sign_up
-    visit '/admin'
-    fill_in 'chatbot-statement-input', with: 'Test Message'
-    fill_in 'answer', with: 'My Answer'
-    fill_in 'response', with: 'My Response'
-    find('.submit-field input').click
+    create_new_statement
     expect(page).to have_content 'My Answer'
   end
 end
