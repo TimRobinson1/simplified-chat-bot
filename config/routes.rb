@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   constraints Clearance::Constraints::SignedIn.new do
-    root to: "clearance/users#new", as: :signed_in_root
+    root to: "clearance/users#chatroom", as: :signed_in_root
     resources :users
   end
 end

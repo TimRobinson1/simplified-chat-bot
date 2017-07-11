@@ -14,6 +14,10 @@ class Clearance::UsersController < ApplicationController
     render template: "users/new"
   end
 
+  def chatroom
+    render template: "users/chatroom"
+  end
+
   def create
     @user = user_from_params
 
