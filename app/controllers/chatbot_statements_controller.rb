@@ -12,8 +12,6 @@ class ChatbotStatementsController < ApplicationController
 
   def chatroom
     @statements = ChatbotStatement.all
-
-    @statements.each { |s| p s.user_answers }
   end
 
   private

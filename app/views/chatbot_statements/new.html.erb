@@ -5,6 +5,7 @@
   <%= form.text_area :message, id: 'chatbot-statement-input' %>
 
   <%= form.fields_for :user_answers do |a| %>
+    <h3>Answers</h3>
     <div class="field">
       <%= a.label :message %><br />
       <%= a.text_field :message, id: 'answer' %>
