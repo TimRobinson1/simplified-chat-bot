@@ -10,7 +10,7 @@ RSpec.describe UserAnswer, type: :model do
 
   it 'new answers can be created for users to choose' do
     statement = ChatbotStatement.create(message: 'Give me an answer')
-    answer = UserAnswer.create(message: 'answer', chatbot_statement_id: statement.id)
+    answer = UserAnswer.create(message: 'answer', response: 'response', chatbot_statement_id: statement.id)
     expect(answer).to be_valid
   end
 

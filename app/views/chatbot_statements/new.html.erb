@@ -4,6 +4,18 @@
 
   <%= form.text_area :message, id: 'chatbot-statement-input' %>
 
+  <%= form.fields_for :user_answers do |a| %>
+    <div class="field">
+      <%= a.label :message %><br />
+      <%= a.text_field :message, id: 'answer' %>
+    </div>
+
+    <div class="field">
+      <%= a.label :response %><br />
+      <%= a.text_field :response, id: 'response' %>
+    </div>
+  <% end %>
+
   <div class='submit-field'>
     <%= form.submit %>
   </div>
