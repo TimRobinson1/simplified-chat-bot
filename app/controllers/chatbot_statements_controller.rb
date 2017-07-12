@@ -18,6 +18,11 @@ class ChatbotStatementsController < ApplicationController
     render 'ending'
   end
 
+  def view
+    @statements = ChatbotStatement.all
+    render 'tree'
+  end
+
   def remove
     @statements = ChatbotStatement.all
     render 'users/remove'

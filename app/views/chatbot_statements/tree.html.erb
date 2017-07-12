@@ -1,0 +1,33 @@
+<ul>
+<% @statements.each do |statement| %>
+
+  <% if statement.status %>
+    <li>
+      <%= statement.message %>
+    </li>
+    <ul>
+      <li>
+        <strong>Results in <%= statement.status %></strong>
+      </li>
+    </ul>
+
+  <% else %>
+
+    <li><%= statement.message %></li>
+    <ul>
+    <% statement.user_answers.each do |answer| %>
+      <li>
+        <strong>Answer:</strong> <%= answer.message %>
+      </li>
+      <ul>
+        <li>
+          <strong>Bot Responds with:</strong> <%= answer.response %>
+        </li>
+      </ul>
+    <% end %>
+    </ul>
+
+  <% end %>
+
+<% end %>
+</ul>
