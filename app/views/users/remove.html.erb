@@ -1,0 +1,6 @@
+<% @statements.each do |statement| %>
+  <%= statement.message %>
+  <%= form_for(statement, :html => { :method => :delete, :remote => true }) do |f| %>
+    <%= f.submit :value => "Delete" %>
+  <% end %>
+<% end %>

@@ -10,6 +10,16 @@ class ChatbotStatementsController < ApplicationController
     redirect_to '/'
   end
 
+  def remove
+    @statements = ChatbotStatement.all
+    render 'users/remove'
+  end
+
+  def destroy
+     @statement = ChatbotStatement.find params[:id]
+     @statement.destroy
+  end
+
   def chatroom
     load_default_conversation if missing_statements?
     @statements = ChatbotStatement.all

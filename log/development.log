@@ -12629,3 +12629,272 @@ Processing by ChatbotStatementsController#new as HTML
 Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 06:14:48 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by Clearance::UsersController#dashboard as HTML
+  Rendering users/dashboard.html.erb within layouts/application
+  Rendered users/dashboard.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 204ms (Views: 197.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 06:16:08 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by Clearance::UsersController#dashboard as HTML
+  Rendering users/dashboard.html.erb within layouts/application
+  Rendered users/dashboard.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 06:16:17 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by Clearance::UsersController#dashboard as HTML
+  Rendering users/dashboard.html.erb within layouts/application
+  Rendered users/dashboard.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 26ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 06:16:46 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by Clearance::UsersController#dashboard as HTML
+  Rendering users/dashboard.html.erb within layouts/application
+  Rendered users/dashboard.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 06:21:50 +0100
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by Clearance::UsersController#dashboard as HTML
+  Rendering users/dashboard.html.erb within layouts/application
+  Rendered users/dashboard.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/dialogue/remove" for 127.0.0.1 at 2017-07-12 06:21:51 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#remove as HTML
+  Rendering users/remove.html.erb within layouts/application
+  Rendered users/remove.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 29ms (Views: 24.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 06:23:51 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by Clearance::UsersController#dashboard as HTML
+  Rendering users/dashboard.html.erb within layouts/application
+  Rendered users/dashboard.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/dialogue/remove" for 127.0.0.1 at 2017-07-12 06:23:52 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#remove as HTML
+  Rendering users/remove.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.2ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ChatbotStatement Load (0.0ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ChatbotStatement Load (0.0ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ChatbotStatement Load (0.0ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ChatbotStatement Load (0.0ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ChatbotStatement Load (0.0ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ChatbotStatement Load (0.0ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ChatbotStatement Load (0.0ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered users/remove.html.erb within layouts/application (233.4ms)
+Completed 500 Internal Server Error in 240ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `a' for #<#<Class:0x007fbe9e1b0df0>:0x007fbe9d9db670>):
+    1: <%= a.select :response, options_for_select(@statements.collect { |statement|
+    2:   [statement.message, statement.message]
+    3: }) %>
+  
+app/views/users/remove.html.erb:1:in `_app_views_users_remove_html_erb__1577190351341380919_70228332420240'
+app/controllers/chatbot_statements_controller.rb:15:in `remove'
+Started GET "/admin/dialogue/remove" for 127.0.0.1 at 2017-07-12 06:24:02 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#remove as HTML
+  Rendering users/remove.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.2ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered users/remove.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    1: <%= select :response, options_for_select(@statements.collect { |statement|
+    2:   [statement.message, statement.message]
+    3: }) %>
+  
+app/views/users/remove.html.erb:1:in `_app_views_users_remove_html_erb__1577190351341380919_70228337664920'
+app/controllers/chatbot_statements_controller.rb:15:in `remove'
+Started GET "/admin/dialogue/remove" for 127.0.0.1 at 2017-07-12 06:26:11 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#remove as HTML
+  Rendering users/remove.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered users/remove.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<ChatbotStatement::ActiveRecord_Relation:0x007fbe9ab22838>
+Did you mean?  to_set
+               to_ary):
+    1: <%= form_for @statements, html: { multipart: true } do |form| %>
+    2:   <%= form.select :response, options_for_select(@statements.collect { |statement|
+    3:     [statement.message, statement.message]
+    4:   }) %>
+  
+app/views/users/remove.html.erb:1:in `_app_views_users_remove_html_erb__1577190351341380919_70228307922480'
+app/controllers/chatbot_statements_controller.rb:15:in `remove'
+Started GET "/admin/dialogue/remove" for 127.0.0.1 at 2017-07-12 06:26:39 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#remove as HTML
+  Rendering users/remove.html.erb within layouts/application
+  Rendered users/remove.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Class:0x007fbe9e22b988>
+Did you mean?  to_query):
+    1: <%= form_for ChatbotStatement, html: { multipart: true } do |form| %>
+    2:   <%= form.select :response, options_for_select(@statements.collect { |statement|
+    3:     [statement.message, statement.message]
+    4:   }) %>
+  
+app/views/users/remove.html.erb:1:in `_app_views_users_remove_html_erb__1577190351341380919_70228285140440'
+app/controllers/chatbot_statements_controller.rb:15:in `remove'
+Started GET "/admin/dialogue/remove" for 127.0.0.1 at 2017-07-12 06:29:37 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#remove as HTML
+  Rendering users/remove.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered users/remove.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/dialogue/remove" for 127.0.0.1 at 2017-07-12 06:30:57 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#remove as HTML
+  Rendering users/remove.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered users/remove.html.erb within layouts/application (229.4ms)
+Completed 500 Internal Server Error in 234ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `x' for #<#<Class:0x007fbe9e1b0df0>:0x007fbe9d9439b0>):
+    1: <% @statements.each do |statement| %>
+    2:   <%= x.message %>
+    3:   <%= form_for(statement, :html => { :method => :delete, :remote => true }) do |f| %>
+    4:     <%= f.submit :value => "Delete" %>
+    5:   <% end %>
+  
+app/views/users/remove.html.erb:2:in `block in _app_views_users_remove_html_erb__1577190351341380919_70228332122420'
+app/views/users/remove.html.erb:1:in `_app_views_users_remove_html_erb__1577190351341380919_70228332122420'
+app/controllers/chatbot_statements_controller.rb:15:in `remove'
+Started GET "/admin/dialogue/remove" for 127.0.0.1 at 2017-07-12 06:31:06 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#remove as HTML
+  Rendering users/remove.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered users/remove.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/chatbot_statements/3" for 127.0.0.1 at 2017-07-12 06:31:18 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for ChatbotStatementsController):
+  
+actionpack (5.1.2) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.2) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+clearance (1.16.0) lib/clearance/rack_session.rb:23:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin/dialogue/remove" for 127.0.0.1 at 2017-07-12 06:31:25 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#remove as HTML
+  Rendering users/remove.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.3ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered users/remove.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/dialogue/remove" for 127.0.0.1 at 2017-07-12 06:32:45 +0100
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#remove as HTML
+  Rendering users/remove.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered users/remove.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/chatbot_statements/2" for 127.0.0.1 at 2017-07-12 06:32:47 +0100
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#destroy as JS
+  Parameters: {"utf8"=>"✓", "commit"=>"Delete", "id"=>"2"}
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" WHERE "chatbot_statements"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "chatbot_statements" WHERE "chatbot_statements"."id" = ?[0m  [["id", 2]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+No template found for ChatbotStatementsController#destroy, rendering head :no_content
+Completed 204 No Content in 196ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/admin/dialogue/remove" for 127.0.0.1 at 2017-07-12 06:32:48 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "366581d397fa1a51a0f8899c1eb8f543a8f44821"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#remove as HTML
+  Rendering users/remove.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered users/remove.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.1ms)
+
+
