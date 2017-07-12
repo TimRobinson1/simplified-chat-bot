@@ -13,14 +13,13 @@
 
     <div class="field">
       <%= a.label :bot_response %><br />
-      <%= a.select :response, options_for_select(ChatbotStatement.all.collect { |statement|
-        [statement.message, statement.message]
-      }), id: 'response_one' %>
+      <%= a.text_field :response, id: 'response_one' %>
+      * Ensure that this matches an existing or upcoming bot message
 
     </div>
   <% end %>
 
-  <h3>Answer 2</h3>
+  <h3>Answer Two</h3>
 
   <%= form.fields_for :user_answers do |a| %>
     <div class="field">
@@ -29,10 +28,9 @@
     </div>
 
     <div class="field">
-      <%= a.label :response %><br />
-      <%= a.select :response, options_for_select(ChatbotStatement.all.collect { |statement|
-        [statement.message, statement.message]
-      }), id: 'response_two' %>
+      <%= a.label :bot_response %><br />
+      <%= a.text_field :response, id: 'response_two' %>
+      * Ensure that this matches an existing or upcoming bot message
     </div>
   <% end %>
 

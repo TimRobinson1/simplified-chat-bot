@@ -1,33 +1,33 @@
 def create_new_statement
-  visit '/admin'
+  visit '/admin/dialogue/new'
   fill_in 'chatbot-statement-input', with: 'Test Message'
   fill_in 'answer_one', with: 'My Answer'
-  select "Just chilling. You?", :from => "chatbot_statement_user_answers_attributes_0_response"
+  fill_in 'response_one', with: "Bot responds!"
   fill_in 'answer_two', with: 'My Next Answer'
-  select "Just chilling. You?", :from => "chatbot_statement_user_answers_attributes_1_response"
+  fill_in 'response_two', with: "Bot keeps responding!"
   find('.submit-field input').click
 end
 
 def create_statement_with_only_one_answer
-  visit '/admin'
+  visit '/admin/dialogue/new'
   fill_in 'chatbot-statement-input', with: 'Test Message'
   fill_in 'answer_one', with: 'My Answer'
-  select "Just chilling. You?", :from => "chatbot_statement_user_answers_attributes_0_response"
+  fill_in 'response_one', with: "Bot responds!"
   find('.submit-field input').click
 end
 
 def create_invalid_statement
   # No answers present
-  visit '/admin'
+  visit '/admin/dialogue/new'
   fill_in 'chatbot-statement-input', with: 'Test Message'
-  select "Just chilling. You?", :from => "chatbot_statement_user_answers_attributes_0_response"
-  select "Just chilling. You?", :from => "chatbot_statement_user_answers_attributes_1_response"
+  fill_in 'response_one', with: "Bot responds!"
+  fill_in 'response_two', with: "Bot responds again!"
   find('.submit-field input').click
 end
 
 def create_statement_and_invalid_answer
   # No responses present
-  visit '/admin'
+  visit '/admin/dialogue/new'
   fill_in 'chatbot-statement-input', with: 'Test Message'
   fill_in 'answer_one', with: 'My Answer'
   fill_in 'answer_two', with: 'My Next Answer'
