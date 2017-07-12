@@ -8,9 +8,17 @@
 
 <script>
   $('#chatbox').on('click', 'button', function() {
+    var message = $(this).text()
+    $(this).css("background-color", "#CCCCCC");
     $("#chatbox :button").attr("disabled", true);
-    $.get('/response', {message: $(this).text()}).done(function(chat) {
-      $('#chatbox').append(chat);
-    })
+    setTimeout( function() {
+      $('#chatbox').append('<p id="typing">Chatbot is typing...</p>')
+    }, 1500)
+    setTimeout( function() {
+      $('#typing').remove();
+      $.get('/response', {message: message}).done(function(chat) {
+        $('#chatbox').append(chat);
+      })
+    }, 5000)
   })
 </script>
