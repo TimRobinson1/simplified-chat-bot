@@ -1,17 +1,17 @@
 class Clearance::UsersController < ApplicationController
   if respond_to?(:before_action)
-    before_action :redirect_signed_in_users, only: [:create, :new]
-    skip_before_action :require_login, only: [:create, :new], raise: false
-    skip_before_action :authorize, only: [:create, :new], raise: false
+    before_action :redirect_signed_in_users, only: %i[create new]
+    skip_before_action :require_login, only: %i[create new], raise: false
+    skip_before_action :authorize, only: %i[create new], raise: false
   else
-    before_filter :redirect_signed_in_users, only: [:create, :new]
-    skip_before_filter :require_login, only: [:create, :new], raise: false
-    skip_before_filter :authorize, only: [:create, :new], raise: false
+    before_filter :redirect_signed_in_users, only: %i[create new]
+    skip_before_filter :require_login, only: %i[create new], raise: false
+    skip_before_filter :authorize, only: %i[create new], raise: false
   end
 
   def new
     @user = user_from_params
-    render template: "users/new"
+    render template: 'users/new'
   end
 
   def dashboard
@@ -26,7 +26,7 @@ class Clearance::UsersController < ApplicationController
       flash[:success] = "Welcome to the chat, #{@user.name}!"
       redirect_to '/'
     else
-      flash[:error] = "Have you already signed up? Please sign in"
+      flash[:error] = 'Have you already signed up? Please sign in'
       render template: 'users/new'
     end
   end
@@ -38,9 +38,7 @@ class Clearance::UsersController < ApplicationController
   end
 
   def redirect_signed_in_users
-    if signed_in?
-      redirect_to Clearance.configuration.redirect_url
-    end
+    redirect_to Clearance.configuration.redirect_url if signed_in?
   end
 
   def url_after_create
@@ -48,7 +46,7 @@ class Clearance::UsersController < ApplicationController
   end
 
   def user_from_params
-    user_params = params[:user] || Hash.new
+    user_params = params[:user] || {}
     email = user_params.delete(:email)
     password = user_params.delete(:password)
     name = user_params.delete(:name)
@@ -61,7 +59,7 @@ class Clearance::UsersController < ApplicationController
   end
 
   def user_params
-    params[Clearance.configuration.user_parameter] || Hash.new
+    params[Clearance.configuration.user_parameter] || {}
   end
 
   def permit_params

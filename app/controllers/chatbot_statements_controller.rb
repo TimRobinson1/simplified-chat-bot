@@ -29,20 +29,19 @@ class ChatbotStatementsController < ApplicationController
   end
 
   def destroy
-     @statement = ChatbotStatement.find params[:id]
-     @statement.destroy
+    @statement = ChatbotStatement.find params[:id]
+    @statement.destroy
   end
 
   def chatroom
     load_default_conversation if missing_statements?
     @statements = ChatbotStatement.all
-    p @statements
   end
 
   private
 
   def statement_params
-    params.require(:chatbot_statement).permit(:message, :status, user_answers_attributes: [:message, :response])
+    params.require(:chatbot_statement).permit(:message, :status, user_answers_attributes: %i[message response])
   end
 
   def missing_statements?

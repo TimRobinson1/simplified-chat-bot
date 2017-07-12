@@ -1,26 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe UserAnswersController, type: :controller do
-  it "creates a new user answer" do
+  it 'creates a new user answer' do
     statement = ChatbotStatement.create(message: 'Hello, world!')
     UserAnswer.create(message: 'Hello, world!', response: 'response', chatbot_statement_id: statement.id)
-    expect(UserAnswer.find_by(message: "Hello, world!")).to be
+    expect(UserAnswer.find_by(message: 'Hello, world!')).to be
   end
 
-  it "does not create a new answer with an invalid chatbot statement id" do
+  it 'does not create a new answer with an invalid chatbot statement id' do
     UserAnswer.create(message: 'Hello, world!', response: 'response', chatbot_statement_id: 'id')
-    expect(UserAnswer.find_by(message: "Hello, world!")).to be_nil
+    expect(UserAnswer.find_by(message: 'Hello, world!')).to be_nil
   end
 
-  it "does not create a new answer without a given chatbot response" do
+  it 'does not create a new answer without a given chatbot response' do
     statement = ChatbotStatement.create(message: 'Hello, world!')
     UserAnswer.create(message: 'Hello, world!', chatbot_statement_id: statement.id)
-    expect(UserAnswer.find_by(message: "Hello, world!")).to be_nil
+    expect(UserAnswer.find_by(message: 'Hello, world!')).to be_nil
   end
 
-  it "does not create a new answer without a message body" do
+  it 'does not create a new answer without a message body' do
     statement = ChatbotStatement.create(message: 'Hello, world!')
     UserAnswer.create(response: 'response', chatbot_statement_id: statement.id)
-    expect(UserAnswer.find_by(message: "Hello, world!")).to be_nil
+    expect(UserAnswer.find_by(message: 'Hello, world!')).to be_nil
   end
 end

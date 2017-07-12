@@ -14687,3 +14687,47 @@ puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
 puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-12 08:04:18 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChatbotStatementsController#chatroom as HTML
+  [1m[36mChatbotStatement Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 219ms (Views: 202.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2017-07-12 08:04:32 +0100
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/_form.html.erb (9.6ms)
+  Rendered /Users/timrobinson/.rvm/gems/ruby-2.4.1/gems/clearance-1.16.0/app/views/sessions/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 53ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-07-12 08:04:33 +0100
+Processing by Clearance::UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 79ms (Views: 57.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-07-12 08:04:38 +0100
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Dae", "email"=>"sdse@email.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sdse@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "name", "email", "encrypted_password", "remember_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2017-07-12 07:04:38.688692"], ["updated_at", "2017-07-12 07:04:38.688692"], ["name", "Dae"], ["email", "sdse@email.com"], ["encrypted_password", "$2a$10$t.QE8PRXM7TUXF1WggC96uRTbmDgf5jU6I3z17IZbG0c0PkTK2JwO"], ["remember_token", "85f34412c4ea2ed358784108110432021e3b2989"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 77ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 08:04:38 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "85f34412c4ea2ed358784108110432021e3b2989"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  [1m[36mChatbotStatement Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
