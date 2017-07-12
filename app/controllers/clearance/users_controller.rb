@@ -14,6 +14,10 @@ class Clearance::UsersController < ApplicationController
     render template: "users/new"
   end
 
+  def dashboard
+    render template: 'users/dashboard'
+  end
+
   def create
     @user = user_from_params
 

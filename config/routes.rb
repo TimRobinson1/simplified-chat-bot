@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   constraints Clearance::Constraints::SignedIn.new do
     resources :users, :chatbot_statements, :user_answers
-    get '/admin' => "chatbot_statements#new"
+    get '/admin' => "clearance/users#dashboard"
+    get '/admin/dialogue/new' => "chatbot_statements#new"
     get '/response' => "user_answers#message"
     root to: "chatbot_statements#chatroom", as: :signed_in_root
   end
