@@ -8819,3 +8819,14 @@ Processing by ChatbotStatementsController#chatroom as HTML
 Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 08:20:25 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.2ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  Rendered chatbot_statements/new.html.erb within layouts/application (16.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "fc9f33323e0ad36209b2c977ae595d54951301fd"], ["LIMIT", 1]]
+Completed 200 OK in 268ms (Views: 231.8ms | ActiveRecord: 1.9ms)
+
+

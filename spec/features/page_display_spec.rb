@@ -6,18 +6,6 @@ RSpec.feature "Interface", type: :feature do
     expect(page).to have_content 'Welcome to the chat, TestUser!'
   end
 
-  it "Page displays new statement" do
-    sign_up
-    create_new_statement
-    expect(page).to have_content 'Test Message'
-  end
-
-  it "Page displays statement answer" do
-    sign_up
-    create_new_statement
-    expect(page).to have_content 'My Answer'
-  end
-
   it "Does not display a new statement if invalid" do
     sign_up
     create_invalid_statement

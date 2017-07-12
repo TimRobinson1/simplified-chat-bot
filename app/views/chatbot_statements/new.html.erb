@@ -15,7 +15,7 @@
       <%= a.label :bot_response %><br />
       <%= a.select :response, options_for_select(ChatbotStatement.all.collect { |statement|
         [statement.message, statement.message]
-      }) %>
+      }), id: 'response_one' %>
 
     </div>
   <% end %>
@@ -32,7 +32,7 @@
       <%= a.label :response %><br />
       <%= a.select :response, options_for_select(ChatbotStatement.all.collect { |statement|
         [statement.message, statement.message]
-      }) %>
+      }), id: 'response_two' %>
     </div>
   <% end %>
 
