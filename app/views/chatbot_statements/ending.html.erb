@@ -1,0 +1,16 @@
+<h1>Add a Chatbot Ending</h1>
+<%= form_for @statement, html: { multipart: true } do |form| %>
+  <%= form.label :message %>
+
+  <%= form.text_area :message, id: 'chatbot-statement-input' %>
+
+  <h3>Result</h3>
+  <%= form.radio_button :status, 'pass', :checked => true %>
+  <%= form.label :pass, 'pass' %>
+  <%= form.radio_button :status, 'sms' %>
+  <%= form.label :fail, 'fail' %>
+
+  <div class='submit-field'>
+    <%= form.submit %>
+  </div>
+<% end %>

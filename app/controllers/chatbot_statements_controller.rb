@@ -1,6 +1,6 @@
 class ChatbotStatementsController < ApplicationController
   include ChatbotStatementsHelper
-  
+
   def new
     @statement = ChatbotStatement.new
     @statement.user_answers.build
@@ -10,6 +10,12 @@ class ChatbotStatementsController < ApplicationController
     @statement = ChatbotStatement.create(statement_params)
     @statement.save
     redirect_to '/'
+  end
+
+  def ending
+    @statement = ChatbotStatement.new
+    @statement.user_answers.build
+    render 'ending'
   end
 
   def remove
@@ -25,6 +31,7 @@ class ChatbotStatementsController < ApplicationController
   def chatroom
     load_default_conversation if missing_statements?
     @statements = ChatbotStatement.all
+    p @statements
   end
 
   private
