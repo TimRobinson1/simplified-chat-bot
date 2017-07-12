@@ -18,7 +18,7 @@ class ChatbotStatementsController < ApplicationController
   private
 
   def statement_params
-    params.require(:chatbot_statement).permit(:message, user_answers_attributes: [:message, :response])
+    params.require(:chatbot_statement).permit(:message, :status, user_answers_attributes: [:message, :response])
   end
 
   def load_default_conversation
@@ -59,9 +59,9 @@ class ChatbotStatementsController < ApplicationController
       chatbot_statement_id: statement.id
     )
 
-    ChatbotStatement.create(message: '...Literally more than anything! :D')
-    ChatbotStatement.create(message: 'Haha, ahh I love memes.')
-    ChatbotStatement.create(message: "Cool.  Well, this is boring... brb")
+    ChatbotStatement.create(message: '...Literally more than anything! :D', status: 'pass')
+    ChatbotStatement.create(message: 'Haha, ahh I love memes.', status: 'pass')
+    ChatbotStatement.create(message: "Cool.  Well, this is boring... brb", status: 'fail')
   end
 
   def missing_statements?
