@@ -1,8 +1,12 @@
 <h1>Welcome to the chatroom</h1>
+<p>Hello there!</p>
+<button type='button'>Hi</button>
 
-<% @statements.each do |statement| %>
+<!-- <% @statements.each do |statement| %>
   <p><%= statement.message %></p>
   <% statement.user_answers.each do |answer| %>
-    <p>Answer: <%= answer.message %></p>
+    <button type='button'><%= answer.message %></button>
+    <p>Response: <%= answer.response %></p>
+     <%= '@statements.find_by_message(answer.response).message rescue nil' %>
   <% end %>
-<% end %>
+<% end %> -->

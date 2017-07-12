@@ -12,8 +12,11 @@
     </div>
 
     <div class="field">
-      <%= a.label :response %><br />
-      <%= a.text_field :response, id: 'response_one' %>
+      <%= a.label :bot_response %><br />
+      <%= a.select :response, options_for_select(ChatbotStatement.all.collect { |statement|
+        [statement.message, statement.message]
+      }) %>
+
     </div>
   <% end %>
 
@@ -27,7 +30,9 @@
 
     <div class="field">
       <%= a.label :response %><br />
-      <%= a.text_field :response, id: 'response_two' %>
+      <%= a.select :response, options_for_select(ChatbotStatement.all.collect { |statement|
+        [statement.message, statement.message]
+      }) %>
     </div>
   <% end %>
 
