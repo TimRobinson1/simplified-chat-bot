@@ -10462,3 +10462,126 @@ Processing by ChatbotStatementsController#chatroom as HTML
 Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-12 13:03:13 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "e67d2d093344b71a9db41c83a407100ebaa3a1df"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  [1m[36mChatbotStatement Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 228ms (Views: 210.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/response?message=How%27s%20it%20going%3F" for 127.0.0.1 at 2017-07-12 13:03:17 +0100
+Processing by UserAnswersController#message as */*
+  Parameters: {"message"=>"How's it going?"}
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT  "user_answers".* FROM "user_answers" WHERE "user_answers"."message" = ? LIMIT ?[0m  [["message", "How's it going?"], ["LIMIT", 1]]
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" WHERE "chatbot_statements"."message" = ? LIMIT ?[0m  [["message", "Not too bad. You?"], ["LIMIT", 1]]
+  Rendering user_answers/message.html.erb
+  [1m[36mUserAnswer Load (0.2ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 2]]
+  Rendered user_answers/message.html.erb (17.7ms)
+Completed 200 OK in 53ms (Views: 35.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/response?message=Yeah%20I%27m%20good%20thanks." for 127.0.0.1 at 2017-07-12 13:03:24 +0100
+Processing by UserAnswersController#message as */*
+  Parameters: {"message"=>"Yeah I'm good thanks."}
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT  "user_answers".* FROM "user_answers" WHERE "user_answers"."message" = ? LIMIT ?[0m  [["message", "Yeah I'm good thanks."], ["LIMIT", 1]]
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" WHERE "chatbot_statements"."message" = ? LIMIT ?[0m  [["message", "Cool.  Well, this is boring... brb"], ["LIMIT", 1]]
+  Rendering user_answers/message.html.erb
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 6]]
+  Rendered user_answers/message.html.erb (1.7ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/response?message=Doing%20great!%20Want%20to%20browse%20the%20web%20for%20memes%3F" for 127.0.0.1 at 2017-07-12 13:03:28 +0100
+Processing by UserAnswersController#message as */*
+  Parameters: {"message"=>"Doing great! Want to browse the web for memes?"}
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT  "user_answers".* FROM "user_answers" WHERE "user_answers"."message" = ? LIMIT ?[0m  [["message", "Doing great! Want to browse the web for memes?"], ["LIMIT", 1]]
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" WHERE "chatbot_statements"."message" = ? LIMIT ?[0m  [["message", "...Literally more than anything! :D"], ["LIMIT", 1]]
+  Rendering user_answers/message.html.erb
+  [1m[36mUserAnswer Load (0.3ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 4]]
+  Rendered user_answers/message.html.erb (1.7ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:04:40 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "e67d2d093344b71a9db41c83a407100ebaa3a1df"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  [1m[36mChatbotStatement Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:05:09 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "e67d2d093344b71a9db41c83a407100ebaa3a1df"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  [1m[36mChatbotStatement Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/response?message=How%27s%20it%20going%3F" for 127.0.0.1 at 2017-07-12 14:05:10 +0100
+Processing by UserAnswersController#message as */*
+  Parameters: {"message"=>"How's it going?"}
+  [1m[36mUserAnswer Load (0.2ms)[0m  [1m[34mSELECT  "user_answers".* FROM "user_answers" WHERE "user_answers"."message" = ? LIMIT ?[0m  [["message", "How's it going?"], ["LIMIT", 1]]
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" WHERE "chatbot_statements"."message" = ? LIMIT ?[0m  [["message", "Not too bad. You?"], ["LIMIT", 1]]
+  Rendering user_answers/message.html.erb
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 2]]
+  Rendered user_answers/message.html.erb (1.7ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/response?message=Yeah%20I%27m%20good%20thanks." for 127.0.0.1 at 2017-07-12 14:05:12 +0100
+Processing by UserAnswersController#message as */*
+  Parameters: {"message"=>"Yeah I'm good thanks."}
+  [1m[36mUserAnswer Load (0.3ms)[0m  [1m[34mSELECT  "user_answers".* FROM "user_answers" WHERE "user_answers"."message" = ? LIMIT ?[0m  [["message", "Yeah I'm good thanks."], ["LIMIT", 1]]
+  [1m[36mChatbotStatement Load (0.2ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" WHERE "chatbot_statements"."message" = ? LIMIT ?[0m  [["message", "Cool.  Well, this is boring... brb"], ["LIMIT", 1]]
+  Rendering user_answers/message.html.erb
+  [1m[36mUserAnswer Load (0.2ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 6]]
+  Rendered user_answers/message.html.erb (1.6ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:05:15 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "e67d2d093344b71a9db41c83a407100ebaa3a1df"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  [1m[36mChatbotStatement Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/response?message=How%27s%20it%20going%3F" for 127.0.0.1 at 2017-07-12 14:05:16 +0100
+Processing by UserAnswersController#message as */*
+  Parameters: {"message"=>"How's it going?"}
+  [1m[36mUserAnswer Load (0.2ms)[0m  [1m[34mSELECT  "user_answers".* FROM "user_answers" WHERE "user_answers"."message" = ? LIMIT ?[0m  [["message", "How's it going?"], ["LIMIT", 1]]
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" WHERE "chatbot_statements"."message" = ? LIMIT ?[0m  [["message", "Not too bad. You?"], ["LIMIT", 1]]
+  Rendering user_answers/message.html.erb
+  [1m[36mUserAnswer Load (0.2ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 2]]
+  Rendered user_answers/message.html.erb (1.9ms)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/response?message=Doing%20great!%20Want%20to%20browse%20the%20web%20for%20memes%3F" for 127.0.0.1 at 2017-07-12 14:05:18 +0100
+Processing by UserAnswersController#message as */*
+  Parameters: {"message"=>"Doing great! Want to browse the web for memes?"}
+  [1m[36mUserAnswer Load (0.2ms)[0m  [1m[34mSELECT  "user_answers".* FROM "user_answers" WHERE "user_answers"."message" = ? LIMIT ?[0m  [["message", "Doing great! Want to browse the web for memes?"], ["LIMIT", 1]]
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" WHERE "chatbot_statements"."message" = ? LIMIT ?[0m  [["message", "...Literally more than anything! :D"], ["LIMIT", 1]]
+  Rendering user_answers/message.html.erb
+  [1m[36mUserAnswer Load (0.2ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 4]]
+  Rendered user_answers/message.html.erb (2.0ms)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:05:20 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "e67d2d093344b71a9db41c83a407100ebaa3a1df"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  [1m[36mChatbotStatement Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.1ms)
+
+

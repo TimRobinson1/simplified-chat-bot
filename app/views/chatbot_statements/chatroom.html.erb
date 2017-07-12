@@ -7,6 +7,7 @@
 
 <script>
   $('#chatbox').on('click', 'button', function() {
+    $(this).attr("disabled", true);
     $.get('/response', {message: $(this).text()}).done(function(chat) {
       $('#chatbox').append(chat);
     })
