@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   constraints Clearance::Constraints::SignedOut.new do
-    root to: "clearance/users#new"
-    get '/admin' => "clearance/users#new"
+    get '/response' => "user_answers#message"
+    root to: "chatbot_statements#chatroom"
   end
 
   constraints Clearance::Constraints::SignedIn.new do
