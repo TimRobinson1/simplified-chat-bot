@@ -7097,3 +7097,322 @@ Processing by ChatbotStatementsController#new as HTML
 Completed 200 OK in 49ms (Views: 28.0ms | ActiveRecord: 1.9ms)
 
 
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 07:04:06 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (13.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Completed 200 OK in 253ms (Views: 216.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 07:04:38 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 27.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/chatbot_statements" for 127.0.0.1 at 2017-07-12 07:09:24 +0100
+Processing by ChatbotStatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "chatbot_statement"=>{"message"=>"Dave", "user_answers_attributes"=>{"0"=>{"message"=>"Second Dave", "response"=>"apasd"}}}, "commit"=>"Create Chatbot statement"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "chatbot_statements" ("message", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["message", "Dave"], ["created_at", "2017-07-12 06:09:24.137039"], ["updated_at", "2017-07-12 06:09:24.137039"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "user_answers" ("message", "chatbot_statement_id", "created_at", "updated_at", "response") VALUES (?, ?, ?, ?, ?)[0m  [["message", "Second Dave"], ["chatbot_statement_id", 5], ["created_at", "2017-07-12 06:09:24.138882"], ["updated_at", "2017-07-12 06:09:24.138882"], ["response", "apasd"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 07:09:24 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 1]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 2]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 3]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 4]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 5]]
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 07:11:08 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 1]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 2]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 3]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 4]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 5]]
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 07:14:03 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 07:14:07 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `responsed' for #<UserAnswer:0x007fd4ce05af78>
+Did you mean?  response
+               response=
+               response?):
+    13: 
+    14:     <div class="field">
+    15:       <%= a.label :response %><br />
+    16:       <%= a.text_field :responsed, id: 'response_one' %>
+    17:     </div>
+    18: 
+    19:     <h3>Answer 2</h3>
+  
+app/views/chatbot_statements/new.html.erb:16:in `block (2 levels) in _app_views_chatbot_statements_new_html_erb___164068114920683830_70275983065260'
+app/views/chatbot_statements/new.html.erb:7:in `block in _app_views_chatbot_statements_new_html_erb___164068114920683830_70275983065260'
+app/views/chatbot_statements/new.html.erb:2:in `_app_views_chatbot_statements_new_html_erb___164068114920683830_70275983065260'
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 07:14:13 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 26.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 07:18:47 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/chatbot_statements" for 127.0.0.1 at 2017-07-12 07:19:06 +0100
+Processing by ChatbotStatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "chatbot_statement"=>{"message"=>"That would be nice wouldn't it?", "user_answers_attributes"=>{"0"=>{"message"=>"Yeah it would", "response"=>"yep"}, "1"=>{"message"=>"I agree", "response"=>"me too"}}}, "commit"=>"Create Chatbot statement"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "chatbot_statements" ("message", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["message", "That would be nice wouldn't it?"], ["created_at", "2017-07-12 06:19:06.677054"], ["updated_at", "2017-07-12 06:19:06.677054"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "user_answers" ("message", "chatbot_statement_id", "created_at", "updated_at", "response") VALUES (?, ?, ?, ?, ?)[0m  [["message", "Yeah it would"], ["chatbot_statement_id", 6], ["created_at", "2017-07-12 06:19:06.678591"], ["updated_at", "2017-07-12 06:19:06.678591"], ["response", "yep"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "user_answers" ("message", "chatbot_statement_id", "created_at", "updated_at", "response") VALUES (?, ?, ?, ?, ?)[0m  [["message", "I agree"], ["chatbot_statement_id", 6], ["created_at", "2017-07-12 06:19:06.680405"], ["updated_at", "2017-07-12 06:19:06.680405"], ["response", "me too"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 07:19:06 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.2ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 1]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 2]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 3]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 4]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 5]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 6]]
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 07:19:50 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/chatbot_statements" for 127.0.0.1 at 2017-07-12 07:19:58 +0100
+Processing by ChatbotStatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "chatbot_statement"=>{"message"=>"Dave", "user_answers_attributes"=>{"0"=>{"message"=>"Lol", "response"=>"Hmm"}, "1"=>{"message"=>"", "response"=>""}}}, "commit"=>"Create Chatbot statement"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 07:19:58 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 1]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 2]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 3]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 4]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 5]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 6]]
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 07:26:48 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 1]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 2]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 3]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 4]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 5]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 6]]
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 07:26:52 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/timrobinson/Desktop/Coding_Projects/Git_Projects/Makers/tech-tests/stafford-long/app/views/chatbot_statements/new.html.erb:22: syntax error, unexpected keyword_do, expecting keyword_then or ';' or '\n'
+'.freeze;   if false do 
+                       ^
+/Users/timrobinson/Desktop/Coding_Projects/Git_Projects/Makers/tech-tests/stafford-long/app/views/chatbot_statements/new.html.erb:41: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/chatbot_statements/new.html.erb:22: syntax error, unexpected keyword_do, expecting keyword_then or ';' or '\n'
+app/views/chatbot_statements/new.html.erb:41: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 07:27:51 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/chatbot_statements" for 127.0.0.1 at 2017-07-12 07:27:59 +0100
+Processing by ChatbotStatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "chatbot_statement"=>{"message"=>"Lol", "user_answers_attributes"=>{"0"=>{"message"=>"Cat", "response"=>"asd"}}}, "commit"=>"Create Chatbot statement"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chatbot_statements" ("message", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["message", "Lol"], ["created_at", "2017-07-12 06:27:59.925814"], ["updated_at", "2017-07-12 06:27:59.925814"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "user_answers" ("message", "chatbot_statement_id", "created_at", "updated_at", "response") VALUES (?, ?, ?, ?, ?)[0m  [["message", "Cat"], ["chatbot_statement_id", 7], ["created_at", "2017-07-12 06:27:59.927009"], ["updated_at", "2017-07-12 06:27:59.927009"], ["response", "asd"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 07:27:59 +0100
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 1]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 2]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 3]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 4]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 5]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 6]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 7]]
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 07:28:25 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 07:49:03 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/chatbot_statements" for 127.0.0.1 at 2017-07-12 07:50:04 +0100
+Processing by ChatbotStatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "chatbot_statement"=>{"message"=>"This is a chat bot sentence!", "user_answers_attributes"=>{"0"=>{"message"=>"Tgasdasdasdasd", "response"=>"ssss"}, "1"=>{"message"=>"", "response"=>"d"}}}, "commit"=>"Create Chatbot statement"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 07:50:04 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.2ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 1]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 2]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 3]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 4]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 5]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 6]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 7]]
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-07-12 07:50:10 +0100
+Processing by ChatbotStatementsController#new as HTML
+  Rendering chatbot_statements/new.html.erb within layouts/application
+  Rendered chatbot_statements/new.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/chatbot_statements" for 127.0.0.1 at 2017-07-12 07:50:20 +0100
+Processing by ChatbotStatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "chatbot_statement"=>{"message"=>"Sentence!", "user_answers_attributes"=>{"0"=>{"message"=>"Woot!", "response"=>"ds"}, "1"=>{"message"=>"NOOOOOO", "response"=>"df"}}}, "commit"=>"Create Chatbot statement"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "chatbot_statements" ("message", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["message", "Sentence!"], ["created_at", "2017-07-12 06:50:20.610225"], ["updated_at", "2017-07-12 06:50:20.610225"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "user_answers" ("message", "chatbot_statement_id", "created_at", "updated_at", "response") VALUES (?, ?, ?, ?, ?)[0m  [["message", "Woot!"], ["chatbot_statement_id", 8], ["created_at", "2017-07-12 06:50:20.611173"], ["updated_at", "2017-07-12 06:50:20.611173"], ["response", "ds"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "user_answers" ("message", "chatbot_statement_id", "created_at", "updated_at", "response") VALUES (?, ?, ?, ?, ?)[0m  [["message", "NOOOOOO"], ["chatbot_statement_id", 8], ["created_at", "2017-07-12 06:50:20.611881"], ["updated_at", "2017-07-12 06:50:20.611881"], ["response", "df"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 07:50:20 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "efb369749c53fb2ef4faebb6936b5b9336100c14"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT "chatbot_statements".* FROM "chatbot_statements"[0m
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 1]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 2]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 3]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 4]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 5]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 6]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 7]]
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 8]]
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.7ms)
+
+

@@ -8,12 +8,26 @@
     <h3>Answers</h3>
     <div class="field">
       <%= a.label :message %><br />
-      <%= a.text_field :message, id: 'answer' %>
+      <%= a.text_field :message, id: 'answer_one' %>
     </div>
 
     <div class="field">
       <%= a.label :response %><br />
-      <%= a.text_field :response, id: 'response' %>
+      <%= a.text_field :response, id: 'response_one' %>
+    </div>
+  <% end %>
+
+  <h3>Answer 2</h3>
+
+  <%= form.fields_for :user_answers do |a| %>
+    <div class="field">
+      <%= a.label :message %><br />
+      <%= a.text_field :message, id: 'answer_two' %>
+    </div>
+
+    <div class="field">
+      <%= a.label :response %><br />
+      <%= a.text_field :response, id: 'response_two' %>
     </div>
   <% end %>
 
