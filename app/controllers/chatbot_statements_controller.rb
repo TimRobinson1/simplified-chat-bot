@@ -22,7 +22,7 @@ class ChatbotStatementsController < ApplicationController
   end
 
   def load_default_conversation
-    statement = ChatbotStatement.create(message: 'Hey there!')
+    statement = ChatbotStatement.create(message: 'Hey!')
     UserAnswer.create(
       message: "How's it going?",
       response: "Not too bad. You?",

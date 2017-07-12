@@ -1,1 +1,4 @@
-
+<p><%= @statement.message %></p>
+<% @statement.user_answers.each do |answer| %>
+  <button type='button'><%= answer.message %></button>
+<% end %>

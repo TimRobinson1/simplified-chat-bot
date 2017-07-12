@@ -1,19 +1,14 @@
 <h1>Welcome to the chatroom</h1>
-<p>Hello there!</p>
-<button type='button'>Hi</button>
 
-<!-- <% @statements.each do |statement| %>
-  <p><%= statement.message %></p>
-  <% statement.user_answers.each do |answer| %>
-    <button type='button'><%= answer.message %></button>
-    <p>Response: <%= answer.response %></p>
-     <%= '@statements.find_by_message(answer.response).message rescue nil' %>
-  <% end %>
-<% end %> -->
+<div id='chatbox'>
+  <p>Hello there!</p>
+  <button type='button'>How's it going?</button>
+</div>
+
 <script>
-  $('button').on('click', function() {
-    $.get('/response', {}).done(function(data) {
-      console.log(data)
+  $('#chatbox').on('click', 'button', function() {
+    $.get('/response', {message: $(this).text()}).done(function(chat) {
+      $('#chatbox').append(chat);
     })
   })
 </script>
