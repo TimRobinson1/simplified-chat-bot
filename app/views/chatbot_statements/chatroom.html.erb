@@ -10,3 +10,10 @@
      <%= '@statements.find_by_message(answer.response).message rescue nil' %>
   <% end %>
 <% end %> -->
+<script>
+  $('button').on('click', function() {
+    $.get('/response', {}).done(function(data) {
+      console.log(data)
+    })
+  })
+</script>
