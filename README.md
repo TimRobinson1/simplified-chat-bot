@@ -20,7 +20,7 @@ Quickstart guide
 
 Example usage
 -------------
-![Chat Example](example_usage.png?raw=true "An Example conversation")
+![Chat Example](example.png?raw=true "An Example conversation")
 
 Technologies used
 ------------
