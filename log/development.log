@@ -14731,3 +14731,36 @@ Processing by ChatbotStatementsController#chatroom as HTML
 Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-12 08:22:51 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "85f34412c4ea2ed358784108110432021e3b2989"], ["LIMIT", 1]]
+Processing by ChatbotStatementsController#chatroom as HTML
+  [1m[36mChatbotStatement Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chatbot_statements" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering chatbot_statements/chatroom.html.erb within layouts/application
+  Rendered chatbot_statements/chatroom.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 211ms (Views: 196.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/response?message=Hey!%20What%20are%20you%20up%20to%3F" for 127.0.0.1 at 2017-07-12 08:22:59 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "85f34412c4ea2ed358784108110432021e3b2989"], ["LIMIT", 1]]
+Processing by UserAnswersController#message as */*
+  Parameters: {"message"=>"Hey! What are you up to?"}
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT  "user_answers".* FROM "user_answers" WHERE "user_answers"."message" = ? LIMIT ?[0m  [["message", "Hey! What are you up to?"], ["LIMIT", 1]]
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" WHERE "chatbot_statements"."message" = ? LIMIT ?[0m  [["message", "Just chilling. You?"], ["LIMIT", 1]]
+  Rendering user_answers/message.html.erb
+  [1m[36mUserAnswer Load (0.3ms)[0m  [1m[34mSELECT "user_answers".* FROM "user_answers" WHERE "user_answers"."chatbot_statement_id" = ?[0m  [["chatbot_statement_id", 3]]
+  Rendered user_answers/message.html.erb (14.2ms)
+Completed 200 OK in 49ms (Views: 29.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/response?message=Yeah%20me%20too." for 127.0.0.1 at 2017-07-12 08:23:05 +0100
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "85f34412c4ea2ed358784108110432021e3b2989"], ["LIMIT", 1]]
+Processing by UserAnswersController#message as */*
+  Parameters: {"message"=>"Yeah me too."}
+  [1m[36mUserAnswer Load (0.1ms)[0m  [1m[34mSELECT  "user_answers".* FROM "user_answers" WHERE "user_answers"."message" = ? LIMIT ?[0m  [["message", "Yeah me too."], ["LIMIT", 1]]
+  [1m[36mChatbotStatement Load (0.1ms)[0m  [1m[34mSELECT  "chatbot_statements".* FROM "chatbot_statements" WHERE "chatbot_statements"."message" = ? LIMIT ?[0m  [["message", "Cool.  Well, this is boring... brb"], ["LIMIT", 1]]
+  Rendering user_answers/end.html.erb
+  Rendered user_answers/end.html.erb (0.6ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.2ms)
+
+
