@@ -1,0 +1,28 @@
+.navbar {
+  background-color: #61a8ff;
+  color: #FFFFFF;
+  overflow:hidden;
+  padding: 5px;
+}
+
+.nav-button {
+  background-color: green;
+  float:right;
+  margin:3px 5px;
+  background-color: #61a8ff;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius:5px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.nav-button:hover {
+  background-color: #FFFFFF;
+  color:#61a8ff;
+}
+
+.signed-in-message {
+  float:left;
+  margin:0;
+  padding:0;
+}
