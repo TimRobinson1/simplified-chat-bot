@@ -2,14 +2,14 @@
 
 <div id='chatbox'>
   <p>Hello there!</p>
-  <button id="first-button" type='button'>How's it going?</button>
-  <button type='button'>Hey! What are you up to?</button>
+  <button class='response-option' id="first-button" type='button'>How's it going?</button>
+  <button class='response-option' type='button'>Hey! What are you up to?</button>
 </div>
 
 <script>
   $('#chatbox').on('click', 'button', function() {
     var message = $(this).text()
-    $(this).css("background-color", "#CCCCCC");
+    $(this).css("background-color", "#61a8ff");
     $("#chatbox :button").attr("disabled", true);
     setTimeout( function() {
       $('#chatbox').append('<p id="typing">Chatbot is typing...</p>')

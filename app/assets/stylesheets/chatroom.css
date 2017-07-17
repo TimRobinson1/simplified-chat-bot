@@ -1,0 +1,16 @@
+.response-option {
+  background-color: #61a8ff;
+  color: white;
+  border:none;
+  border-radius: 5px;
+  outline:none;
+  padding:5px 10px;
+}
+
+.response-option:disabled {
+  background-color:#CCCCCC;
+}
+
+.response-option:hover:enabled {
+  background-color: #6666ff;
+}
